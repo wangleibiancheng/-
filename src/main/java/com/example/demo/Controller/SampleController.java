@@ -1,8 +1,10 @@
 package com.example.demo.Controller;
-
+import com.example.demo.result.CodeMessage;
+import com.example.demo.result.Result;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author wanglei
@@ -16,5 +18,10 @@ public class SampleController {
         String name="wanglei";
         model.addAttribute("name",name);
         return "hello";
+    }
+    @RequestMapping("test1")
+    @ResponseBody
+    public Result<String> sample(){
+        return Result.error(CodeMessage.SERVER_ERROR);
     }
 }
