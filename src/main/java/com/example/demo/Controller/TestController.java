@@ -17,8 +17,8 @@ public class TestController {
     UserService userService;
     @RequestMapping("/est")
     public void test(){
-        final User user = userService.findById(1);
-        System.out.println(user.getId());
+        User user = userService.findById(1);
+        System.out.println(user.getName());
 
     }
 }
